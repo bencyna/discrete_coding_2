@@ -23,10 +23,9 @@ string: 'prop' in string form
 '''
 def format_prop(prop):
     # BASE CASE: #####################################
-    if # fill in here #:
-        return # fill in return value here #
-    ##################################################
-
+    if len(prop) == 1
+        return prop[0]
+    
     # UNARY OPERATOR (not): ##########################
     if 2 == len(prop):
         # the following two variable declarations are missing LHS #
