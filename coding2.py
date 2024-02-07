@@ -23,17 +23,18 @@ string: 'prop' in string form
 '''
 def format_prop(prop):
     # BASE CASE: #####################################
-    if len(prop) == 1
+    if len(prop) == 1:
         return prop[0]
     
     # UNARY OPERATOR (not): ##########################
     if 2 == len(prop):
         # the following two variable declarations are missing LHS #
-        = prop[0] # missing LHS
-        = prop[1] # missing LHS
+        op = prop[0] # missing LHS
+        proposition = prop[1] # missing LHS
 
         if "not" == op:
-            formatted_prop = # fill in here #
+            formatted_prop = f"not {proposition[0]}" # fill in here #
+            print("nots", formatted_prop)
             return formatted_prop
         else:
             raise ValueError("Unary proposition is not not.")
@@ -42,9 +43,9 @@ def format_prop(prop):
     # BINARY OPERATOR (and, or, if, iff, xor): #######
     elif 3 == len(prop):
         # the following three variable declarations are missing LHS #
-        = prop[0] # missing LHS
-        = prop[1] # missing LHS
-        = prop[2] # missing LHS
+        op = prop[0] # missing LHS
+        left_prop = prop[1] # missing LHS
+        right_prop = prop[2] # missing LHS
 
         if op not in ("if", "iff", "or", "and", "xor"):
             raise ValueError("Binary proposition does not have valid connectives.")
@@ -56,10 +57,10 @@ def format_prop(prop):
             op = "<->"
 
         # format left and right sides of a binary operation
-        left_prop = # fill in here #
-        right_prop = # fill in here #
+        left_prop = format_prop(left_prop)
+        right_prop = format_prop(right_prop)
 
-        formatted_prop = # fill in here #
+        formatted_prop = f"({left_prop}) {op} ({right_prop})"
         return formatted_prop
     ####################################################
 
